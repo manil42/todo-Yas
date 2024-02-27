@@ -1,0 +1,25 @@
+.button-container {
+  background-color: rgb(30, 70, 248);
+  color: white;
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-error-color {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 15px;
+  &:hover {
+    background-color: rgba(154, 10, 10, 0.907);
+    transition: 0.3s ease-in;
+  }
+}
+.button-success-color {
+  background-color: green;
+  color: white;
+}
