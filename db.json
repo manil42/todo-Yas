@@ -1,0 +1,14 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "title": "Todo 1",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 2,
+      "title": "Todo 2",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  ]
+}
