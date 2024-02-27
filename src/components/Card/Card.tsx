@@ -11,10 +11,17 @@ const Card = () => {
           <Header label="Todo List" />
         </div>
         <div className="card-paragraph">
-          <Paragraph label="working on react component" />
+          <Paragraph label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, a. Voluptatem earum veniam pariatur minima ipsum expedita ullam. Quis, rerum!" />
         </div>
         <div className="card-button">
-          <Button label="Delete" isError />
+          <div className="main-btn-container">
+            <div className="child-button">
+              <Button label="Edit" isSuccess />
+            </div>
+            <div className="child-button">
+              <Button label="Delete" isError />
+            </div>
+          </div>
         </div>
       </div>
     </div>

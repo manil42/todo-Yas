@@ -14,12 +14,21 @@
   border: none;
   padding: 0.5rem;
   border-radius: 15px;
+  min-width: 50px;
   &:hover {
     background-color: rgba(154, 10, 10, 0.907);
     transition: 0.3s ease-in;
   }
 }
 .button-success-color {
-  background-color: green;
+  background-color: rgb(40, 167, 69);
   color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 15px;
+  min-width: 50px;
+  &:hover {
+    background-color: rgba(30, 126, 52, 0.907);
+    transition: 0.3s ease-in;
+  }
 }

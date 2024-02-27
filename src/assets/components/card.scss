@@ -11,4 +11,9 @@
     max-width: 400px;
     border-radius: 15px;
   }
+  .main-btn-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
