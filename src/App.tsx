@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import Card from "./components/Card/Card";
+import AssignmentCard from "./components/AssignmentCard/AssignmentCard";
+
 function App() {
   const [post, setPosts] = useState([]);
   useEffect(() => {
@@ -12,6 +13,12 @@ function App() {
   [];
   console.log(post);
 
+  const handleEdit = () => {
+console.log('this is edit button')
+  };
+  const handleDelete = () => {
+console.log('this is delete button')
+  };
   return (
     <>
       <div>
@@ -21,7 +28,12 @@ function App() {
           // <p>{data.description}</p>
           // </div>
           <div>
-            <Card />
+            <AssignmentCard
+              title={data.title}
+              description={data.description}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+            />
           </div>
         ))}
       </div>
