@@ -12,6 +12,12 @@ function App() {
   [];
   console.log(post);
 
+  const handleEdit = () => {
+    console.log('Edit button is clicked')
+  };
+  const handleDelete = () => {
+    console.log('Delete button is clicked')
+  };
   return (
     <>
       <div>
@@ -21,7 +27,12 @@ function App() {
           // <p>{data.description}</p>
           // </div>
           <div>
-            <Card />
+            <Card
+              title={data.title}
+              description={data.description}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+            />
           </div>
         ))}
       </div>
