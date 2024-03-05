@@ -3,7 +3,7 @@ import React from "react";
 
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom"; // Notice the change here
 
-import Todo from "./pages/todo";
+import Todo from "./pages/Todo";
 import AddTodo from "./pages/Addtodo";
 
 function App() {
