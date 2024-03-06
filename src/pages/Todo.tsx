@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card/Card";
 import Button from "../components/Button/Button";
-
+import { useNavigate } from "react-router-dom";
 function Todo() {
   const [post, setPosts] = useState([]);
+
+  const navigation = useNavigate();
 
   const [formData, setFormData] = useState({
     id: 0,
@@ -19,9 +21,8 @@ function Todo() {
 
   [];
 
-  const handleAdd = () => {
-    //@ts-ignore
-    setPosts([...post, { id: 3, title: "todo3", description: "hello" }]);
+  const handleAddTodo = () => {
+    navigation("/addTodo", { replace: true });
   };
 
   const handleEdit = () => {
@@ -33,36 +34,11 @@ function Todo() {
     setPosts([...data]);
   };
 
-  const hadnleInputData = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value, id: post.length + 1 });
-  };
-
-  const handleSubmit = (e: any) => {
-    //@ts-ignore
-    setPosts([...post, formData]);
-  };
-
   return (
     <>
       <div>
         <div style={{ margin: "16px" }}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit(e);
-            }}
-          >
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={(e) => {
-                hadnleInputData(e);
-              }}
-            />
-            <button type="submit"> Add Todo </button>
-          </form>
+          <Button label={"Add Todo"} handleClick={handleAddTodo} />
         </div>
         {post?.map((data: any) => (
           <div>

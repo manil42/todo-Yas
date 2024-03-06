@@ -10,19 +10,9 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/todo">Todo</Link>
-            </li>
-            <li>
-              <Link to="/addTodo">AddTodo</Link>
-            </li>
-          </ul>
-        </nav>
         <Routes>
           <Route path="/addTodo" element={<AddTodo />} />
-          <Route path="/todo" element={<Todo />} />
+          <Route path="/" element={<Todo />} />
         </Routes>
       </div>
     </Router>

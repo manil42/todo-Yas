@@ -1,24 +1,34 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
+type todoFormProps = {
+  handleSubmit: (e: any) => void;
+  handleInputData: (e: any) => void;
+  handleBackTodo?: () => void;
+  formData?: {
+    id: number;
+    title: string;
+    description: string;
+  };
+};
+const TodoAddForm = ({
+  handleSubmit,
+  handleInputData,
+  formData,
+}: todoFormProps) => {
+  const navigation = useNavigate();
 
-const TodoAddForm = () => {
-  const [formData, setFormData] = useState({
-    id: 0,
-    title: "",
-    description: "",
-  });
-  type FormProps = {
-    handleSubmit?: () => void;
-    handleInput?: () => void;
+  const handleBackTodo = () => {
+    navigation("/", { replace: true });
   };
-  const hadnleInputData = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const hadnleInputData = (e: any) => {
+  //
+  // };
 
-  const handleSubmit = (e: any) => {
-    //@ts-ignore
-    setPosts([...post, formData]);
-  };
+  // const handleSubmit = (e: any) => {
+  //   //@ts-ignore
+  //   setPosts([...post, formData]);
+  // };
 
   return (
     <div className="formContainer" style={{ margin: "16px" }}>
@@ -29,6 +39,7 @@ const TodoAddForm = () => {
             handleSubmit(e);
           }}
         >
+          <Button label="Back" handleClick={handleBackTodo} />
           <div className="containers">
             <label htmlFor="" style={{ marginRight: "16px" }}>
               Title :
@@ -36,9 +47,9 @@ const TodoAddForm = () => {
             <input
               type="text"
               name="title"
-              value={formData.title}
+              value={formData?.title}
               onChange={(e) => {
-                hadnleInputData(e);
+                handleInputData(e);
               }}
             />
           </div>
@@ -50,9 +61,9 @@ const TodoAddForm = () => {
             <input
               type="text"
               name="description"
-              value={formData.description}
+              value={formData?.description}
               onChange={(e) => {
-                hadnleInputData(e);
+                handleInputData(e);
               }}
             />
           </div>

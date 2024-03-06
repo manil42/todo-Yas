@@ -15,6 +15,13 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     .containers {
       padding: 10px;
+      display: flex; /* Use flexbox for container */
+      align-items: center; /* Align items vertically */
+      margin-bottom: 1rem;
+      label {
+        margin-right: 16px;
+        min-width: 100px; /* Set a minimum width for labels */
+      }
     }
   }
 }
