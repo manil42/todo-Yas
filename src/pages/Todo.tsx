@@ -25,8 +25,8 @@ function Todo() {
     navigation("/addTodo", { replace: true });
   };
 
-  const handleEdit = () => {
-    console.log("Edit button is clicked");
+  const handleEdit = (id: number) => {
+    navigation(`editTodo/${id}`, { replace: true });
   };
   const handleDelete = (id: number) => {
     const copyData = [...post];
@@ -46,7 +46,7 @@ function Todo() {
               title={data.title}
               description={data.description}
               handleEdit={() => {
-                handleEdit;
+                handleEdit(data.id);
               }}
               handleDelete={() => {
                 handleDelete(data.id);
