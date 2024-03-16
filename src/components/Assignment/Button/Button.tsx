@@ -4,16 +4,24 @@ type ButtonProps = {
   label: string;
   isError?: boolean;
   isSuccess?: boolean;
+  isBackbtn?: boolean;
   handleClick?: () => void;
 };
 
-const Button = ({ label, isError, isSuccess, handleClick }: ButtonProps) => {
+const Button = ({
+  label,
+  isError,
+  isSuccess,
+  isBackbtn,
+  handleClick,
+}: ButtonProps) => {
   return (
     <>
       <button
         className={`button-contaner 
     ${isError === true ? "button-error-color" : "false"}
     ${isSuccess === true ? "button-success-color" : "false"}
+    ${isBackbtn === true ? "button-back-color" : "false"}
      `}
         onClick={handleClick}
       >

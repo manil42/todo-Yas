@@ -1,30 +1,20 @@
-import { useState, useEffect } from "react";
-import Card from "./components/Card/Card";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom"; // Notice the change here
+import TodoContainer from "./components/Assignment/Todo-container/Todo-container";
+import AddTodo from "./components/Assignment/Add-Todo/AddTodo";
+import EditTodo from "./components/Assignment/Edit-Todo/EditTodo";
+
 function App() {
-  const [post, setPosts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3001/todo")
-      .then((response) => response.json())
-      .then((data) => setPosts(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  [];
-  console.log(post);
-
   return (
     <>
-      <div>
-        {post?.map((data: any) => (
-          // <div style={{border:"solid 1px black"}}>
-          // <h1>{data.title}</h1>
-          // <p>{data.description}</p>
-          // </div>
-          <div>
-            <Card />
-          </div>
-        ))}
-      </div>
+      <Router>
+        <div>
+          <Routes>
+            <Route path="/editTodo/:userId" element={<EditTodo />} />
+            <Route path="/addTodo" element={<AddTodo />} />
+            <Route path="/" element={<TodoContainer />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

@@ -2,24 +2,32 @@ import React from "react";
 import Header from "../Header/Header";
 import Paragraph from "../Paragraph/Paragraph";
 import Button from "../Button/Button";
+import { useState, useEffect } from "react";
 
-const Card = () => {
+type cardProps = {
+  title: string;
+  description: string;
+  handleEdit?: () => void;
+  handleDelete?: () => void;
+};
+
+const Card = ({ title, description, handleEdit, handleDelete }: cardProps) => {
   return (
     <div className="main-container">
       <div className="card-container">
         <div className="card-header">
-          <Header label="Todo List" />
+          <Header label={title} />
         </div>
         <div className="card-paragraph">
-          <Paragraph label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, a. Voluptatem earum veniam pariatur minima ipsum expedita ullam. Quis, rerum!" />
+          <Paragraph label={description} />
         </div>
         <div className="card-button">
           <div className="main-btn-container">
             <div className="child-button">
-              <Button label="Edit" isSuccess />
+              <Button label="Edit" isSuccess handleClick={handleEdit} />
             </div>
             <div className="child-button">
-              <Button label="Delete" isError />
+              <Button label="Delete" isError handleClick={handleDelete} />
             </div>
           </div>
         </div>

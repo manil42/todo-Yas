@@ -1,0 +1,25 @@
+.todo-wrapper {
+  position: relative;
+  background-color: #ffffff;
+
+  .todo-container {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #f0f0ff;
+    padding: 30px 16px;
+    border-radius: 25px;
+    width: 50%;
+    .todo-header {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 20px;
+    }
+    .card-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  
+}
